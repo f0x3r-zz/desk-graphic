@@ -8,12 +8,10 @@ public class BrightnessWindow extends JDialog implements ActionListener {
     @Serial
     private static final long serialVersionUID = -4669383146821237867L;
 
-    private JLabel label;
     private final JSpinner spinner;
     private final JButton apply;
     private final JButton decline;
 
-    private int k = 0;
     private boolean isApplied;
 
     public BrightnessWindow(JFrame frame) {

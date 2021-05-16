@@ -12,7 +12,6 @@ public class ContrastWindow extends JDialog implements ActionListener {
     private final JButton apply;
     private final JButton decline;
 
-    private int k = 0;
     private boolean isApplied;
 
     public ContrastWindow(JFrame frame) {
