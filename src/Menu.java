@@ -53,6 +53,7 @@ public class Menu extends JMenuBar {
         grayRGB.add(oneOfComponents);
         grayRGB.add(average);
         grayRGB.add(modYUV);
+        add(grayRGB);
 
         // Effects
         effects.add(brightness);
@@ -60,6 +61,5 @@ public class Menu extends JMenuBar {
         effects.add(brightnessInterval);
         effects.add(negation);
         add(effects);
-
     }
 }
