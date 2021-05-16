@@ -10,7 +10,7 @@ public class Panel extends JPanel {
     @Serial
     private static final long serialVersionUID = -7726921692333838831L;
 
-    private BufferedImage canvas;
+    protected BufferedImage canvas;
 
     private int mnRed = 255;
     private int mnGreen = 255;
