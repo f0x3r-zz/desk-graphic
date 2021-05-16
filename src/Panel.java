@@ -204,9 +204,7 @@ public class Panel extends JPanel {
                 green += k;
                 blue += k;
 
-                limitRGB(red, green, blue);
-
-                canvas.setRGB(i, j, new Color(red, green, blue).getRGB());
+                setRGB(red, green, blue, i, j);
             }
         }
 
@@ -231,13 +229,24 @@ public class Panel extends JPanel {
                 green *= k;
                 blue *= k;
 
-                limitRGB(red, green, blue);
-
-                canvas.setRGB(i, j, new Color(red, green, blue).getRGB());
+                setRGB(red, green, blue, i, j);
             }
         }
 
         repaint();
+    }
+
+    private void setRGB(int red, int green, int blue, int i, int j) {
+        if (red > 255) red = 255;
+        else if (red < 0) red = 0;
+
+        if (green > 255) green = 255;
+        else if (green < 0) green = 0;
+
+        if (blue > 255) red = 255;
+        else if (blue < 0) blue = 0;
+
+        canvas.setRGB(i, j, new Color(red, green, blue).getRGB());
     }
 
     public void brightnessInterval(BufferedImage image) {
@@ -258,9 +267,7 @@ public class Panel extends JPanel {
                 green = ((green - mnGreen) * 255) / (mxGreen - mnGreen);
                 blue = ((blue - mnBlue) * 255) / (mxBlue - mnBlue);
 
-                limitRGB(red, green, blue);
-
-                canvas.setRGB(i, j, new Color(red, green, blue).getRGB());
+                setRGB(red, green, blue, i, j);
             }
         }
 
@@ -311,17 +318,6 @@ public class Panel extends JPanel {
         System.out.println("Max green: " + mxGreen);
         System.out.println("Min blue: " + mnBlue);
         System.out.println("Max blue: " + mxBlue);
-    }
-
-    public void limitRGB(int red, int green, int blue) {
-        if (red > 255) red = 255;
-        else if (red < 0) red = 0;
-
-        if (green > 255) green = 255;
-        else if (green < 0) green = 0;
-
-        if (blue > 255) red = 255;
-        else if (blue < 0) blue = 0;
     }
 
     /**
